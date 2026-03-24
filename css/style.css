@@ -1,0 +1,182 @@
+/*the todo css*/
+body {
+    font-family: Chewy, sans-serif;
+    background: #f4f4f4;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #333;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #555;
+}
+
+li {
+    list-style: none;
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/*Now the css from the task list*/
+:root {
+    --bg-color: #f0f2f5;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text-color: #333;
+    --accent: #6c5ce7;
+}
+
+/* Version sombre si on active la classe .dark-mode sur le body */
+body.dark-mode {
+    --bg-color: #2d3436;
+    --card-bg: rgba(0, 0, 0, 0.4);
+    --text-color: #dfe6e9;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le bouton et le texte */
+    justify-content: center;
+    min-height: 70vh; /* Pour qu'il soit bien au milieu de la hauteur */
+}
+
+#magic-btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    /* ... garde ton style précédent ... */
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.4s ease; /* Transition douce pour le dark mode */
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* On crée une boîte qui ne dépasse jamais une certaine largeur */
+.container {
+    max-width: 1000px; /* Largeur idéale pour un dashboard */
+    margin: 0 auto;    /* Le secret pour CENTRER horizontalement */
+    padding: 40px 20px;
+    text-align: center; /* Pour centrer le texte et le bouton */
+}
+
+.hamburger {
+    display: flex;          /* Pour aligner les 3 barres */
+    flex-direction: column; /* Les unes sous les autres */
+    cursor: pointer;
+    gap: 5px;               /* Espace entre les barres */
+    z-index: 1000;          /* Pour qu'il soit au-dessus de tout */
+}
+
+.hamburger span {
+    display: block;         /* Très important pour que la largeur s'applique */
+    width: 30px;            /* Largeur des barres */
+    height: 4px;            /* Épaisseur des barres */
+    background-color: var(--accent); /* Ta couleur violette */
+    border-radius: 10px;
+    transition: 0.3s;       /* Pour de futures animations */
+}
+
+/* Menu qui glisse (Mobile) */
+.nav-links {
+    position: fixed;
+    right: -100%;
+    top: 60px;
+    flex-direction: column;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px); /* Effet "verre" */
+    width: 200px;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.nav-links.active {
+    right: 0; /* Il glisse vers la gauche pour apparaître */
+}
+
+/* Le bouton magic */
+#magic-btn {
+    padding: 12px 24px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+}
+
+/* État de base : le menu est à droite, hors de l'écran */
+.nav-links {
+    list-style: none;
+    position: fixed;
+    right: -100%; /* Complètement caché à droite par défaut */
+    top: 0;
+    height: 100vh;
+    width: 250px;
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    transition: 0.4s ease-in-out;
+    margin: 0;
+    z-index: 99;
+}
+
+.nav-links.active {
+    right: 0; /* Le menu glisse vers l'intérieur de l'écran */
+}
+
+.navbar {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* On s'assure que le bouton de thème est bien visible */
+#theme-toggle {
+    user-select: none; /* Évite de sélectionner le texte en cliquant vite */
+    transition: transform 0.2s;
+}
+
+#taskCounter {
+    margin: 10px;
+    opacity: 0.7;
+}
