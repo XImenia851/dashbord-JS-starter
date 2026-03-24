@@ -7,6 +7,38 @@
 </head>
 
 <body>
+<!-- here we made the navbar-->
+<nav class="navbar">
+    <div class="logo">ZenJS</div>
 
+    <div id="theme-toggle">🌙</div>
+
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#">home</a> </li>
+        <li><a href="#">tasks</a></li>
+    </ul>
+</nav>
+
+<!-- here the main content -->
+<main class="container">
+    <h1 id="greeting">Hello</h1>
+
+    <input type="text" id="taskInput" placeholder="add a task">
+    <button id="addBtn">Add</button>
+
+    <p id="taskCounter">0 tasks</p>
+
+    <ul id="taskList"></ul>
+
+    <button id="magic-btn">Click me</button>
+</main>
+
+<script src="js/script.js"></script>
 </body>
 </html>
